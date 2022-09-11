@@ -23,8 +23,17 @@ public class ComponentService {
     }
 
     public void deleteById(Long id) {
-        ComponentEntity componentEntityFound = this.componentRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Component not found."));
+        ComponentEntity componentEntityFound = findById(id);
         this.componentRepository.deleteById(componentEntityFound.getId());
+    }
+
+    public ComponentEntity update(ComponentEntity componentEntity) {
+        ComponentEntity componentEntityFound = findById(componentEntity.getId());
+        return this.componentRepository.save(componentEntityFound);
+    }
+
+    private ComponentEntity findById(Long id) {
+        return this.componentRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Component not found."));
     }
 }

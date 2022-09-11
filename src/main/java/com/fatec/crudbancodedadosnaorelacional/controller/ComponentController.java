@@ -29,4 +29,9 @@ public class ComponentController {
     public void deleteById(@PathVariable Long id) {
         this.componentService.deleteById(id);
     }
+
+    @PutMapping
+    public ComponentEntity update(@RequestBody ComponentEntity componentEntity) {
+        return this.componentService.update(componentEntity);
+    }
 }
