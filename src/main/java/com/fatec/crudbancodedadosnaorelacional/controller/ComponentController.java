@@ -24,4 +24,9 @@ public class ComponentController {
     public List<ComponentEntity> getAll() {
         return this.componentService.findAll();
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        this.componentService.deleteById(id);
+    }
 }
