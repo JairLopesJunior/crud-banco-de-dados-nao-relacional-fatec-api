@@ -2,6 +2,7 @@ package com.fatec.crudbancodedadosnaorelacional.controller;
 
 import com.fatec.crudbancodedadosnaorelacional.domain.entities.ComponentEntity;
 import com.fatec.crudbancodedadosnaorelacional.service.ComponentService;
+import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
