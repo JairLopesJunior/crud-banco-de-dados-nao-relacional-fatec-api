@@ -5,6 +5,8 @@ import com.fatec.crudbancodedadosnaorelacional.repository.ComponentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ComponentService {
@@ -13,5 +15,9 @@ public class ComponentService {
 
     public ComponentEntity save(ComponentEntity componentEntity) {
         return this.componentRepository.save(componentEntity);
+    }
+
+    public List<ComponentEntity> findAll() {
+        return this.componentRepository.findAll();
     }
 }

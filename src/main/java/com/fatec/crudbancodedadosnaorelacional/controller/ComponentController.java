@@ -5,6 +5,8 @@ import com.fatec.crudbancodedadosnaorelacional.service.ComponentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
@@ -16,5 +18,10 @@ public class ComponentController {
     @PostMapping
     public ComponentEntity save(@RequestBody ComponentEntity entity) {
         return this.componentService.save(entity);
+    }
+
+    @GetMapping
+    public List<ComponentEntity> getAll() {
+        return this.componentService.findAll();
     }
 }
