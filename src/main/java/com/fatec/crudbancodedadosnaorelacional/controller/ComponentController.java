@@ -2,7 +2,6 @@ package com.fatec.crudbancodedadosnaorelacional.controller;
 
 import com.fatec.crudbancodedadosnaorelacional.domain.entities.ComponentEntity;
 import com.fatec.crudbancodedadosnaorelacional.service.ComponentService;
-import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +23,11 @@ public class ComponentController {
     @GetMapping
     public List<ComponentEntity> getAll() {
         return this.componentService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ComponentEntity findById(@PathVariable Long id) {
+        return this.componentService.findById(id);
     }
 
     @DeleteMapping("/{id}")

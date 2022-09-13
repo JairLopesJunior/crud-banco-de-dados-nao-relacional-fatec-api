@@ -40,7 +40,7 @@ public class ComponentService {
         return savedComponent;
     }
 
-    private ComponentEntity findById(Long id) {
+    public ComponentEntity findById(Long id) {
         return this.componentRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Component not found."));
     }
